@@ -33,23 +33,23 @@ def train_cbow():
     model = CBOW(vocab_size, embd_size, CONTEXT_SIZE, hidden_size)
     print(model)
     optimizer = optim.SGD(model.parameters(), lr=learning_rate)
-​
+
     for epoch in range(n_epoch):
         total_loss = .0
         print(epoch)
         for context, target in cbow_train:
             ctx_idxs = [w2i[w] for w in context]
-​
+
             ctx_var = Variable(torch.LongTensor(ctx_idxs))
-​
+
             model.zero_grad()
             log_probs = model(ctx_var)
-​
+
             loss = loss_fn(log_probs, Variable(torch.LongTensor([w2i[target]])))
-​
+
             loss.backward()
             optimizer.step()
-​
+
             total_loss += loss.data.item()
         losses.append(total_loss)
     return model, losses
