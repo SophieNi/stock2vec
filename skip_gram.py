@@ -22,7 +22,7 @@ def skip2gram(filepath):
 	w2v_model.init_sims(replace=True)
 
 	# test the top 20 most correlated tickers for 'BMO' ticker
-	2v_model.wv.most_similar(positive=['BMO'], topn=20)
+	w2v_model.wv.most_similar(positive=['BMO'], topn=20)
 	
 	# save all the unique ticker names in word_index.txt, this is metadata
 	outf = open('word_index.txt', 'w')
