@@ -1,6 +1,6 @@
 # stock2vec
 
-This project is to find the transform stock data into vectors, and run machine learning modal to find related context among stocks.
+This project is to transform stock data into vectors, and run machine learning modal to find related context among stocks.
 
 There are two models experimented:
 *  CBOW
